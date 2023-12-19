@@ -2,7 +2,7 @@ import { useState,useEffect } from "react"
 import { CircularProgressbar, buildStyles} from 'react-circular-progressbar'
 import "react-circular-progressbar/dist/styles.css"
 
-const ControlPresupuesto = ({presupuesto, gastos, setGastos, setPresupuestos,setIsvalid}) => {
+const ControlPresupuesto = ({presupuesto, gastos, setGastos, setPresupuesto,setIsvalid}) => {
 
 
     const [porcentaje,setPorcentaje] = useState(0)
@@ -38,11 +38,12 @@ const ControlPresupuesto = ({presupuesto, gastos, setGastos, setPresupuestos,set
     const handleResetApp = () => {
 
         const confirmar = confirm('Deseas resetear la app?');
-
-        if( confirmar){
-            setGastos = {};
-            setPresupuestos = 0;
-            setIsvalid = false;
+        console.log(confirmar)
+        if( confirmar == true){
+            setGastos([]);
+            setPresupuesto(0);
+            setIsvalid(false);
+            
         }
     }
 
