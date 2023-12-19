@@ -26,6 +26,7 @@ const ControlPresupuesto = ({presupuesto, gastos, setGastos, setPresupuestos,set
         setDisponible(totalDisponible)
     }, [gastos])
 
+
     const FormatearCantidad = (cantidad) =>{
         return cantidad.toLocaleString('en-US',{
             style:'currency',
@@ -38,7 +39,7 @@ const ControlPresupuesto = ({presupuesto, gastos, setGastos, setPresupuestos,set
 
         const confirmar = confirm('Deseas resetear la app?');
 
-        if( resultado){
+        if( confirmar){
             setGastos = {};
             setPresupuestos = 0;
             setIsvalid = false;
